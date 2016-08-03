@@ -4,7 +4,7 @@ var userRepository = require('../repositories/userRepository');
 module.exports = function(router) {
 	router.route('/user/:id')
 
-	.get(function(req, res, next) {
+	.get(function (req, res, next) {
 		userRepository.getById(req.params.id, function(err, data) {
 			res.data = data;
 			res.err = err;
@@ -12,7 +12,7 @@ module.exports = function(router) {
 		});
 	}, apiResponse)
 
-	.put(function(req, res, next) {
+	.put(function (req, res, next) {
 		userRepository.update(req.params.id, req.body ,function(err, data) {
 			res.data = data;
 			res.err = err;
@@ -20,7 +20,7 @@ module.exports = function(router) {
 		});
 	}, apiResponse)
 
-	.delete(function(req, res, next) {
+	.delete(function (req, res, next) {
 		userRepository.delete(req.params.id,function(err, data) {
 			res.data = data;
 			res.err = err;
